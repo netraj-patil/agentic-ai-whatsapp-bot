@@ -4,9 +4,7 @@ Graph Nodes Module for AI Assistant with Calendar Integration
 This module implements a LangGraph-based AI assistant that can handle calendar operations
 and web searches. It uses LangChain components for LLM integration and tool management.
 
-Author: [Your Name]
-Created: [Date]
-Version: 1.0.0
+Author: Netraj Patil
 """
 
 import logging

@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 import os
 import requests
 from datetime import datetime
+from app.services.agent import generate_response
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -115,12 +116,16 @@ async def process_webhook_message(message: WebhookMessage, contact: WebhookConta
         logger.info(f"Text message received: {text_content}")
         
         # Convert to uppercase
-        uppercase_text = text_content.upper()
+        # response = text_content.upper()
+
+        # generate response
+        response = generate_response(text_content)
+
         
         # Send the uppercase message back
         await send_whatsapp_message(
             to_phone_number=contact.wa_id,
-            message_text=uppercase_text,
+            message_text=response,
             phone_number_id=metadata.phone_number_id
         )
         

@@ -18,6 +18,7 @@ import os
 
 # Calendar configuration
 CALENDAR_ID = os.getenv("CALENDAR_ID")
+SERVICE_ACCOUNT_FILE_PATH = os.getenv("SERVICE_ACCOUNT_FILE_PATH")
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
 # Logging configuration
@@ -38,7 +39,7 @@ logger = logging.getLogger(__name__)
 try:
     # Load service account credentials from JSON file
     creds = Credentials.from_service_account_file(
-        "service-account.json",
+        SERVICE_ACCOUNT_FILE_PATH,
         scopes=SCOPES,
     )
     logger.info("Successfully loaded service account credentials")
