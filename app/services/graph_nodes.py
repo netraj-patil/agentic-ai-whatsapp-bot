@@ -83,7 +83,7 @@ class PromptManager:
         """System prompt for the main chatbot node."""
         return f"""You are a helpful AI assistant with access to a calendar and web search.
         
-            Current time: {self.current_time_str}
+            Current time: {datetime.now()}
 
             Instructions:
             - Always resolve relative time references (e.g., 'tomorrow', 'next Monday') into absolute datetime strings
